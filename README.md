@@ -8,9 +8,7 @@
 ---
 
 ## 画面イメージ
-- トレーニング記録入力フォーム
-- トレーニング量推移グラフ
-- トレーニング履歴リスト
+<img src="https://github.com/user-attachments/assets/af365718-ee1d-4e9e-9b7d-78246f7ca352" width="400">
 
 ---
 
