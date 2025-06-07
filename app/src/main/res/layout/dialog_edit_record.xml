@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editEmojiInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="56dp"
@@ -25,7 +25,7 @@
                 android:inputType="text"
                 android:gravity="center"
                 android:textSize="22sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout> -->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editExerciseInputLayout"
