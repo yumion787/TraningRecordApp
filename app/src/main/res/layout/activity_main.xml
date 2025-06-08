@@ -13,7 +13,7 @@
         android:id="@+id/inputTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="トレーニング記録"
+        android:text="トレーニング記録アプリ"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="24dp"
@@ -21,127 +21,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- 1段目：筋トレ種目 -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/exerciseInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
+    <!-- 「記録する」ボタン -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addRecordButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="筋トレ種目"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="記録する"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/inputTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputTitle">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <AutoCompleteTextView
-            android:id="@+id/exerciseInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:imeOptions="actionDone" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- 2段目：日付 -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dateInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="日付"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/exerciseInputLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/dateInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="false"
-            android:clickable="true"
-            android:inputType="none" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- 3段目：重量・回数・セット数・記録ボタン -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/rowInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dateInputLayout">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/weightInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:hint="重量(kg)"
-            app:layout_constraintEnd_toStartOf="@+id/repsInputLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.25">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/weightInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/repsInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:hint="回数"
-            app:layout_constraintEnd_toStartOf="@+id/setsInputLayout"
-            app:layout_constraintStart_toEndOf="@id/weightInputLayout"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.25">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/repsInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/setsInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:hint="セット数"
-            app:layout_constraintEnd_toStartOf="@+id/recordButton"
-            app:layout_constraintStart_toEndOf="@id/repsInputLayout"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.25">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/setsInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/recordButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
-            android:text="記録"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/setsInputLayout"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/setsInput" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!-- グラフタイトルと集計単位タブ -->
+    <!-- グラフタイトル -->
     <TextView
         android:id="@+id/chartTitle"
         android:layout_width="wrap_content"
@@ -150,33 +41,48 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/rowInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/addRecordButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/chartTabLayout"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/chartTabLayout"
-        android:layout_width="wrap_content"
+    <!-- 種目選択プルダウン（入力不可のドロップダウン） -->
+    <AutoCompleteTextView
+        android:id="@+id/chartExerciseDropdown"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:tabIndicatorColor="@color/primaryBlue"
-        app:tabSelectedTextColor="@color/primaryBlue"
-        app:tabTextColor="@color/black"
-        app:tabMode="fixed"
-        app:tabGravity="fill"
-        app:layout_constraintTop_toBottomOf="@id/rowInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/chartTitle"
-        app:layout_constraintHorizontal_bias="1.0" />
+        android:hint="筋トレ種目を選択"
+        android:layout_marginTop="8dp"
+        android:inputType="none"
+        android:focusable="false"
+        android:cursorVisible="false"
+        app:layout_constraintTop_toBottomOf="@id/chartTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- グラフ表示セクション -->
+    <!-- グラフ -->
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/weightChart"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/chartTitle" />
+        app:layout_constraintTop_toBottomOf="@id/chartExerciseDropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 日・週・月タブ（グラフの下に移動） -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/chartTabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:tabIndicatorColor="@color/primaryBlue"
+        app:tabSelectedTextColor="@color/primaryBlue"
+        app:tabTextColor="@color/black"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:layout_constraintTop_toBottomOf="@id/weightChart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <!-- トレーニング履歴タイトル -->
     <TextView
@@ -187,7 +93,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/weightChart"
+        app:layout_constraintTop_toBottomOf="@id/chartTabLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

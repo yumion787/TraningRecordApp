@@ -51,4 +51,11 @@
         android:text="戻る"
         android:layout_marginTop="8dp" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/filterClearButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="クリア"
+        android:layout_marginTop="8dp" />
+
 </LinearLayout> 
